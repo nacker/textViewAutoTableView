@@ -9,18 +9,18 @@
 #import "ViewController.h"
 #import "TextViewCell.h"
 
-@interface ViewController ()
+@interface ViewController ()<TextViewCellDelegate>
 
-@property (nonatomic, strong) NSMutableArray *statusArray;
+@property (nonatomic, strong) NSArray *statusArray;
 
 @end
 
 @implementation ViewController
 
-- (NSMutableArray *)statusArray
+- (NSArray *)statusArray
 {
     if (_statusArray == nil){
-        self.statusArray = [NSMutableArray array];
+        self.statusArray = @[@"Cell 1 ", @"Cell 2", @"Cell 3", @"Cell 4", @"Cell 5", @"Cell 6", @"Cell 7", @"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8"];
     }
     return _statusArray;
 }
@@ -35,27 +35,33 @@
     
     self.tableView.estimatedRowHeight = 100.0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 10;
+    return self.statusArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
- 
     TextViewCell *cell = [TextViewCell cellWithTableView:tableView];
- 
+    cell.delegate = self;
+    cell.textView.text = self.statusArray[indexPath.row];
     return cell;
 }
 
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return 100;
-//}
+#pragma mark - TextViewCellDelegate
+- (void)textViewCell:(TextViewCell *)cell didChangeText:(NSString *)text
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    NSMutableArray *data = [self.statusArray mutableCopy];
+    data[indexPath.row] = text;
+    self.statusArray = [data copy];
+}
 
 #pragma -- Keyboard
 - (void)keyboardWillShow:(NSNotification*)aNotification {

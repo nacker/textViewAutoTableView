@@ -125,13 +125,13 @@
 				622F4AF91DFF98BA001399C8 /* AppDelegate.m */,
 				622F4AFB1DFF98BA001399C8 /* ViewController.h */,
 				622F4AFC1DFF98BA001399C8 /* ViewController.m */,
+				6258D4051DFF9A5C0036FB89 /* TextViewCell.h */,
+				6258D4061DFF9A5C0036FB89 /* TextViewCell.m */,
 				622F4AFE1DFF98BA001399C8 /* Main.storyboard */,
 				622F4B011DFF98BA001399C8 /* Assets.xcassets */,
 				622F4B031DFF98BA001399C8 /* LaunchScreen.storyboard */,
 				622F4B061DFF98BA001399C8 /* Info.plist */,
 				622F4AF51DFF98BA001399C8 /* Supporting Files */,
-				6258D4051DFF9A5C0036FB89 /* TextViewCell.h */,
-				6258D4061DFF9A5C0036FB89 /* TextViewCell.m */,
 			);
 			path = textViewAutoTableView;
 			sourceTree = "<group>";

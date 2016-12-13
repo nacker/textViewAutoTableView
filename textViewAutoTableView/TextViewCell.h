@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@class TextViewCell;
+
+@protocol TextViewCellDelegate <NSObject>
+
+- (void)textViewCell:(TextViewCell *)cell didChangeText:(NSString *)text;
+
+@end
+
 @interface TextViewCell : UITableViewCell
 
+@property (nonatomic, strong) UITextView *textView;
+
 + (instancetype)cellWithTableView:(UITableView *)tableView;
+
+@property (nonatomic, weak) id<TextViewCellDelegate> delegate;
 
 @end
