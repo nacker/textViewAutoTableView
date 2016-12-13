@@ -19,6 +19,7 @@
 		622F4B101DFF98BA001399C8 /* textViewAutoTableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 622F4B0F1DFF98BA001399C8 /* textViewAutoTableViewTests.m */; };
 		622F4B1B1DFF98BA001399C8 /* textViewAutoTableViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 622F4B1A1DFF98BA001399C8 /* textViewAutoTableViewUITests.m */; };
 		6258D4071DFF9A5C0036FB89 /* TextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6258D4061DFF9A5C0036FB89 /* TextViewCell.m */; };
+		6258D40D1DFFBEF80036FB89 /* UIViewController+KeyboardCorver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6258D40C1DFFBEF80036FB89 /* UIViewController+KeyboardCorver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		622F4B1C1DFF98BA001399C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6258D4051DFF9A5C0036FB89 /* TextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewCell.h; sourceTree = "<group>"; };
 		6258D4061DFF9A5C0036FB89 /* TextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewCell.m; sourceTree = "<group>"; };
+		6258D40B1DFFBEF80036FB89 /* UIViewController+KeyboardCorver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KeyboardCorver.h"; sourceTree = "<group>"; };
+		6258D40C1DFFBEF80036FB89 /* UIViewController+KeyboardCorver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KeyboardCorver.m"; sourceTree = "<group>"; };
 		7158699E66845301AEB5A84B /* libPods-textViewAutoTableViewUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-textViewAutoTableViewUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ABCEAC9013A45A8ABCED5A9 /* Pods-textViewAutoTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-textViewAutoTableView.release.xcconfig"; path = "Pods/Target Support Files/Pods-textViewAutoTableView/Pods-textViewAutoTableView.release.xcconfig"; sourceTree = "<group>"; };
 		8CB6F447AE756BB8EF7C469C /* Pods-textViewAutoTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-textViewAutoTableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-textViewAutoTableView/Pods-textViewAutoTableView.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 				622F4B011DFF98BA001399C8 /* Assets.xcassets */,
 				622F4B031DFF98BA001399C8 /* LaunchScreen.storyboard */,
 				622F4B061DFF98BA001399C8 /* Info.plist */,
+				6258D40B1DFFBEF80036FB89 /* UIViewController+KeyboardCorver.h */,
+				6258D40C1DFFBEF80036FB89 /* UIViewController+KeyboardCorver.m */,
 				622F4AF51DFF98BA001399C8 /* Supporting Files */,
 			);
 			path = textViewAutoTableView;
@@ -466,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				622F4AFD1DFF98BA001399C8 /* ViewController.m in Sources */,
+				6258D40D1DFFBEF80036FB89 /* UIViewController+KeyboardCorver.m in Sources */,
 				6258D4071DFF9A5C0036FB89 /* TextViewCell.m in Sources */,
 				622F4AFA1DFF98BA001399C8 /* AppDelegate.m in Sources */,
 				622F4AF71DFF98BA001399C8 /* main.m in Sources */,

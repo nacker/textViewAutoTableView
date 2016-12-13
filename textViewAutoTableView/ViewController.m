@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "TextViewCell.h"
+#import "UIViewController+KeyboardCorver.h"
 
 @interface ViewController ()<TextViewCellDelegate>
 
@@ -29,13 +30,15 @@
     [super viewDidLoad];
     
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     
     self.tableView.estimatedRowHeight = 100.0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    [self addNotification];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -61,24 +64,5 @@
     NSMutableArray *data = [self.statusArray mutableCopy];
     data[indexPath.row] = text;
     self.statusArray = [data copy];
-}
-
-#pragma -- Keyboard
-- (void)keyboardWillShow:(NSNotification*)aNotification {
-    NSDictionary* info = [aNotification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(self.tableView.contentInset.top, 0.0, kbSize.height, 0.0);
-    self.tableView.contentInset = contentInsets;
-    self.tableView.scrollIndicatorInsets = contentInsets;
-}
-
-- (void)keyboardWillHide:(NSNotification*)aNotification {
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.35];
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(self.tableView.contentInset.top, 0.0, 0.0, 0.0);
-    self.tableView.contentInset = contentInsets;
-    self.tableView.scrollIndicatorInsets = contentInsets;
-    [UIView commitAnimations];
 }
 @end
