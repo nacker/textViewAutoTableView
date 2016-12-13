@@ -43,6 +43,8 @@ static NSString * const CellIdentifier = @"TextViewCell";
         _textView.layer.masksToBounds = YES;
         // 自适应高度
         _textView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+        _textView.textContainer.lineFragmentPadding = 0.0;
+        _textView.textContainerInset = UIEdgeInsetsZero;
         
         [self.contentView addSubview:_textView];
         
@@ -51,10 +53,6 @@ static NSString * const CellIdentifier = @"TextViewCell";
             make.left.bottom.top.right.equalTo(self.contentView);
         }];
         
-//        [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.edges.offset(0);
-//            make.bottom.mas_equalTo(_textView).offset(0);
-//        }];
     }
     
     return self;
