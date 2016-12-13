@@ -24,4 +24,6 @@
 
 @property (nonatomic, weak) id<TextViewCellDelegate> delegate;
 
+@property (nonatomic, strong) NSIndexPath *indexPath;
+
 @end

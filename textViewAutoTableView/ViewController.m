@@ -21,7 +21,7 @@
 - (NSArray *)statusArray
 {
     if (_statusArray == nil){
-        self.statusArray = @[@"Cell 1 ", @"Cell 2", @"Cell 3", @"Cell 4", @"Cell 5", @"Cell 6", @"Cell 7", @"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8"];
+        self.statusArray = @[@"Cell 1 ", @"Cell 2", @"Cell 3", @"Cell 4", @"Cell 5", @"Cell 6", @"Cell 7", @"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8",@"Cell 8"];
     }
     return _statusArray;
 }
@@ -51,6 +51,7 @@
 {
     TextViewCell *cell = [TextViewCell cellWithTableView:tableView];
     cell.delegate = self;
+    cell.indexPath = indexPath;
     cell.textView.text = self.statusArray[indexPath.row];
     return cell;
 }
@@ -64,5 +65,8 @@
     NSMutableArray *data = [self.statusArray mutableCopy];
     data[indexPath.row] = text;
     self.statusArray = [data copy];
+    
+    
+//    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 @end

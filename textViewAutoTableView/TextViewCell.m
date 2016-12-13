@@ -74,6 +74,11 @@ static NSString * const CellIdentifier = @"TextViewCell";
     [tableView beginUpdates];
     [tableView endUpdates];
     
+    if ([textView isEqual:_textView])
+    {
+        [tableView scrollToRowAtIndexPath:self.indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+    }
+    
     if ([self.delegate respondsToSelector:@selector(textViewCell:didChangeText:)]) {
         [self.delegate textViewCell:self didChangeText:textView.text];
     }
@@ -89,17 +94,4 @@ static NSString * const CellIdentifier = @"TextViewCell";
     
     return (UITableView *)tableView;
 }
-
-//- (void)textViewDidChange:(UITextView *)textView
-//{
-//    if ([self.delegate respondsToSelector:@selector(textViewCell:didChangeText:)]) {
-//        [self.delegate textViewCell:self didChangeText:textView.text];
-//    }
-//    
-//    // 计算 text view 的高度
-//
-//    // 让 table view 重新计算高度
-//
-//}
-
 @end
